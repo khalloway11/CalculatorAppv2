@@ -18,7 +18,7 @@
     </head>
     <body>
         <div class='container row'>
-                <div class="container col-xs-4">
+                <div class="container col-md-4">
 
                     <img src='<%= request.getContextPath()%>/Images/rectangle.gif' width="80%">
 
@@ -28,7 +28,7 @@
                         <input class="btn btn-success" type="submit" value="Submit">
                     </form>
                 </div>
-                <div class="container col-xs-4">
+                <div class="container col-md-4">
 
                     <img src='<%= request.getContextPath()%>/Images/circle1.jpg' width="80%">
 
@@ -37,7 +37,7 @@
                         <input class="btn btn-success" type="submit" value="Submit">
                     </form>
                 </div>
-                <div class="container col-xs-4">
+                <div class="container col-md-4">
                     <img src='<%= request.getContextPath()%>/Images/triangle.gif' width="80%">
 
                     <form id="triangleForm" name="triangleForm" method="POST" action="<%= request.getContextPath()%>/AllCalculators?calculation=triangle">
