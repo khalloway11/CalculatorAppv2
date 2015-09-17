@@ -17,12 +17,12 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <div class='container'>
+        <div class='container row'>
                 <div class="container col-xs-4">
 
-                    <img src='../Images/rectangle.gif' width="80%">
+                    <img src='<%= request.getContextPath()%>/Images/rectangle.gif' width="80%">
 
-                    <form id="rectangleForm" name="rectangleForm" method="POST" action="../AllCalculators?calculation=rectangle">
+                    <form id="rectangleForm" name="rectangleForm" method="POST" action="<%= request.getContextPath()%>/AllCalculators?calculation=rectangle">
                         <input type="text" id="recLengthInput" name="recLength" placeholder="Enter the length"><br/>
                         <input type="text" id="recHeightInput" name="recHeight" placeholder="Enter the width"><br/>
                         <input class="btn btn-success" type="submit" value="Submit">
@@ -30,26 +30,29 @@
                 </div>
                 <div class="container col-xs-4">
 
-                    <img src='../Images/circle1.jpg' width="80%">
+                    <img src='<%= request.getContextPath()%>/Images/circle1.jpg' width="80%">
 
-                    <form id="circleForm" name="circleForm" method="POST" action="../AllCalculators?calculation=circle">
+                    <form id="circleForm" name="circleForm" method="POST" action="<%= request.getContextPath()%>/AllCalculators?calculation=circle">
                         <input type="text" id="radiusInput" name="radius" placeholder="Enter the radius"><br/>
                         <input class="btn btn-success" type="submit" value="Submit">
                     </form>
                 </div>
                 <div class="container col-xs-4">
-                    <img src='../Images/triangle.gif' width="80%">
+                    <img src='<%= request.getContextPath()%>/Images/triangle.gif' width="80%">
 
-                    <form id="triangleForm" name="triangleForm" method="POST" action="../AllCalculators?calculation=triangle">
+                    <form id="triangleForm" name="triangleForm" method="POST" action="<%= request.getContextPath()%>/AllCalculators?calculation=triangle">
                         <input type="text" id="triLengthInput" name="triLength" placeholder="Enter the length"><br/>
                         <input type="text" id="triHeightInput" name="triHeight" placeholder="Enter the width"><br/>
                         <input class="btn btn-success" type="submit" value="Submit">
                     </form>
                 </div>
             <br><br><br>
-            <div class="container">
+            <div class="container row">
                 <c:if test="${empty shape}">
                     <c:set var="shape" value="shape"></c:set>
+                </c:if>
+                <c:if test="${empty area}">
+                    <c:set var="area" value="0"></c:set>
                 </c:if>
                 <h1>The area of the ${shape} is: ${area}</h1>
             </div>
